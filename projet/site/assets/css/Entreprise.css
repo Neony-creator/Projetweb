@@ -10,16 +10,29 @@
   }
 
 .etoile {
-    margin-right: 5px;
+
     width: 50%;
-    margin-left: 60%;
-    float: auto;
+    margin-left: 50%;
+
+
 }
 
 .eval {
-    display: flex;
     width: 50%;
     float: left;
-    
+}
+
+
+
+.eval2 {
+    width: 50%;
+    float: left;
+}
+
+.etoile2 {
+
+    width: 50%;
+    margin-left: 50%;
+
 
 }
