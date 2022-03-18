@@ -1,0 +1,25 @@
+.recherche {
+    margin-left: 0%;
+    margin-right: 75%;
+    margin-top: 3%;
+    border: solid;
+}
+    
+.checked {
+    color: orange;
+  }
+
+.etoile {
+    margin-right: 5px;
+    width: 50%;
+    margin-left: 60%;
+    float: auto;
+}
+
+.eval {
+    display: flex;
+    width: 50%;
+    float: left;
+    
+
+}
