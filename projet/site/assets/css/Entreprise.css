@@ -9,17 +9,25 @@
     color: orange;
   }
 
+
+.note  {
+    display: flex;
+
+}
+
+
 .etoile {
 
-    width: 50%;
-    margin-left: 50%;
+    */*width: 40%;
+    margin-left: 50%;*/
+
 
 
 }
 
 .eval {
     width: 50%;
-    float: left;
+
 }
 
 
