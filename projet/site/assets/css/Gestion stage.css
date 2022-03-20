@@ -1,0 +1,20 @@
+.recherche {
+    margin-right: 75%;
+    margin-top: 3%;
+    border: solid;
+}
+
+.checked {
+    color: orange;
+}
+
+
+.note  {
+    display: flex;
+
+}
+
+.eval {
+    width: 50%;
+
+}
