@@ -7,13 +7,14 @@
 
 .checked {
     color: orange;
-  }
+}
 
 
 .note  {
     display: flex;
 
 }
+
 
 
 .eval {
