@@ -51,21 +51,24 @@ form table {
     width: 100%;
 }
 
+
 form input,
 form textarea {
     width: 96%;
 
     margin-bottom: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
 
 }
+@media (max-width: 480px) {
+    #saisir{
 
-#saisir{
-
-    height: 100px;
+        height: 90%;
+    }
 }
 
 form button {
     margin: 30px;
     float: right;
 }
+
