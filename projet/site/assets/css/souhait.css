@@ -1,0 +1,77 @@
+#title{
+
+    padding : 1em;
+}
+
+
+#WL
+{
+    float: right;
+    padding-right: 1em;
+    padding-top: 1em;
+}
+
+
+#logo{
+    float: left;
+    padding-left: 1em;
+    padding-top: 1em;
+
+}
+
+#navigbar{
+    clear:left;
+}
+
+#mynavbar{
+    justify-content:center;
+}
+
+
+#image1 {
+    padding-top: 5em;
+    object-fit: contain;
+    height:100%;
+    width: 100%;
+}
+
+#coltxt{
+
+    padding-top: 5em;
+
+}
+
+#liste {
+    text-decoration: underline;
+    margin: 15px;
+    padding: 15px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+td{
+    vertical-align : top;
+}
+
+.checked {
+    color: orange;
+}
+
+
+.note  {
+    display: flex;
+
+}
+
+
+.eval {
+    width: 50%;
+
+}
