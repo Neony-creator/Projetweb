@@ -1,5 +1,4 @@
 .recherche {
-    margin-left: 0%;
     margin-right: 75%;
     margin-top: 3%;
     border: solid;
@@ -7,7 +6,7 @@
 
 .checked {
     color: orange;
-  }
+}
 
 
 .note  {
@@ -15,23 +14,7 @@
 
 }
 
-
 .eval {
     width: 50%;
-
-}
-
-
-
-.eval2 {
-    width: 50%;
-    float: left;
-}
-
-.etoile2 {
-
-    width: 50%;
-    margin-left: 50%;
-
 
 }
