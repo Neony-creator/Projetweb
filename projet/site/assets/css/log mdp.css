@@ -35,14 +35,18 @@
 	padding-top: 7em;
 	padding-bottom : 5em;
   	font-size: 150%;
-	clear: left; 
+	clear: left;
 	}
+
+fieldset{
+	border:solid;
+	padding-top:5em;
+}
 
 
 #button{
 	margin-top : 0.5em;
 }
-
 
 img {
  	height: 100%;
