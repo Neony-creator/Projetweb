@@ -1,19 +1,14 @@
 <!doctype html>
-
 <?php
-$dsn = 'mysql:dbname=projet;host=127.0.0.1:3306';                /*Chaine de connexion avec IP et BDD */
-$username_bdd = "root";                                                 /*Nom d'utilisateur pour MySQL */
-$password_bdd = "cesi";                                               /*Mot de passe pour MySQL*/
-$error = false;                                                         /*Erreur de connexion à false avant connexion*/
+require('chaineconnexion.php');
 
 try {                                                                   /*Tente une connexion...*/
     $bdd = new PDO($dsn, $username_bdd, $password_bdd);                 /*Creation objet PDO et init de la connexion*/
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);      /*Définition de toutes erreurs en tant qu'Exception*/
 } catch(PDOException $e) {                                              /*Si erreur attrapée*/
-$error = $e->getMessage();                                          /*Stock le msg de l'erreur dans error*/
-echo $error;
+    $error = $e->getMessage();                                          /*Stock le msg de l'erreur dans error*/
+    echo $error;
 }
-
 if (!$error) {
 $query = $bdd->prepare('SELECT name_offer, company_name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered, description FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
 $query->execute();

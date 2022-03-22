@@ -1,4 +1,32 @@
 <!doctype html>
+<?php
+require('chaineconnexion.php');
+
+
+try {                                                                   /*Tente une connexion...*/
+    $bdd = new PDO($dsn, $username_bdd, $password_bdd);                 /*Creation objet PDO et init de la connexion*/
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);      /*Définition de toutes erreurs en tant qu'Exception*/
+} catch(PDOException $e) {                                              /*Si erreur attrapée*/
+    $error = $e->getMessage();                                          /*Stock le msg de l'erreur dans error*/
+    echo $error;
+}
+if (!$error) {
+    $query = $bdd->prepare('SELECT name_offer, company_name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered, description FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
+    $query->execute();
+    $results = $query->fetchALL(PDO::FETCH_OBJ);
+}
+
+if (isset($_POST['email'])){
+    $bonjours=$_POST['email'];
+}
+else {
+    $bonjours='b';
+}
+echo $bonjours;
+?>
+<script>
+    console.log('<?php echo $bonjours;?>');
+</script>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -7,7 +35,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/log mdp.css" />
+    <link rel="stylesheet" href="assets/css/log%20mdp.css" />
     <title>PROJET WEB, groupe 4</title>
   </head>
 
@@ -85,17 +113,24 @@
     <div id="all">
 <div class="container-md ">
 <div class="row ">
-    <form>
+    <form  action="log_mdp.php" method="post">
       <div class="form-group col-2 mx-auto ">
-      <label for="exampleInputEmail1">Identifiant</label>
-      <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <label for="email">Identifiant</label>
+      <input type="email" name="email" class="form-control " id="email" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
       <div class="form-group col-2 mx-auto">
-      <label for="exampleInputPassword1">Mot de passe</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      <button type="submit" class="btn btn-lg btn-dark">Valider</button>
+      <label for="password">Mot de passe</label>
+      <input type="password" name="password" class="form-control" id="password1" placeholder="Password">
+      <button type="submit" name="envoie" class="btn btn-lg btn-dark">Valider</button>
       </div>
     </form>
+
+    <?php
+    if(isset($_POST['envoi'])){ // si formulaire soumis
+        echo $_POST['password'];
+        echo "bonjour";
+    }
+    ?>
 </div>
 </div>
 </div>
