@@ -112,18 +112,20 @@ echo $bonjours;
   <body>
 
     <!-- log in mdp -->
-    <div id="all">
+    <div id="all" >
 <div class="container-md ">
-<div class="row ">
-    <form  action="log_mdp.php" method="post">
-      <div class="form-group col-2 mx-auto ">
-      <label for="email">Identifiant</label>
-      <input type="email" name="email" class="form-control " id="email" aria-describedby="emailHelp" placeholder="Enter email">
+<div class="row">
+    <form>
+      <div id="email" class="form-group col-3 mx-auto">
+      <label for="exampleInputEmail1">Identifiant</label>
+      <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez ID">
     </div>
-      <div class="form-group col-2 mx-auto">
-      <label for="password">Mot de passe</label>
-      <input type="password" name="password" class="form-control" id="password1" placeholder="Password">
-      <button type="submit" name="envoie" class="btn btn-lg btn-dark">Valider</button>
+      <div id="mdp" class="form-group col-3 mx-auto">
+      <label for="exampleInputPassword1">Mot de passe</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+          <div id="button">
+            <button type="submit" class="btn btn-lg btn-dark">Valider</button>
+          </div>
       </div>
     </form>
 
