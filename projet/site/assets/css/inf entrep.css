@@ -1,6 +1,7 @@
 #title{
 
 	padding : 1em;
+    text-align : center;
 }
 
 
@@ -28,36 +29,27 @@
 }
 
 
-#perm{
+#topcornL{
+
+    clear:left;
+    padding: 1em;
+
+}
+#topcornL{
+
+    float:right;
+    padding: 1em;
 }
 
-#inp{
-    width: 100%
+#progressbar1{
+
 }
 
-#txt{
-    padding-left : 2em;
-    padding-top: 5em;
-    padding-bottom: 4em;
-}
+#progressbar2{
 
-#grpbut{
-    float : right;
-    padding-top : 1em;
-    padding-right: 7em; 
-}
-
-#deleg{
-    padding-bottom: 1em;
-    padding-left: 2em;
-    text-decoration: underline;
 }
 
 
-img {
- 	height: 100%;
- 	width: 100%;
-}
 
 @media (max-width: 480px) {
     #inp {
