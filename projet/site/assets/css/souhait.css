@@ -47,26 +47,43 @@
     padding: 15px;
 }
 
+.bubble ml-3{
+    margin-left: 20px;
+}
+
 table{
     border-collapse: collapse;
+    margin-left: 30px;
+
 }
 
 th, td{
     border: 1px solid black;
     padding: 10px;
+
+
 }
 
 td{
     vertical-align : top;
+
+
 }
 
-.checked {
+.etoile {
+
+    vertical-align: bottom;
+
+}
+
+.checked{
     color: orange;
 }
 
-
 .note  {
     display: flex;
+    vertical-align: bottom;
+
 
 }
 
@@ -74,4 +91,13 @@ td{
 .eval {
     width: 50%;
 
+
 }
+
+table{
+    width: 600px;
+
+}
+
+
+
