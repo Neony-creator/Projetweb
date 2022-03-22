@@ -1,4 +1,4 @@
-!doctype html>
+<!doctype html>
 
 <?php
 $dsn = 'mysql:dbname=projet;host=127.0.0.1:3306';                /*Chaine de connexion avec IP et BDD */
@@ -15,7 +15,7 @@ echo $error;
 }
 
 if (!$error) {
-$query = $bdd->prepare('SELECT name_offer, compagny_name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered, description FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
+$query = $bdd->prepare('SELECT name_offer, company_name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered, description FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
 $query->execute();
 $results = $query->fetchALL(PDO::FETCH_OBJ);
 ?>
@@ -100,11 +100,11 @@ $results = $query->fetchALL(PDO::FETCH_OBJ);
   <h3 id="liste">Votre liste de souhaits</h3>
   <?php foreach ($results as $result){ ?>
   <div class="bubble ml-3" style="margin-left:20px">
-    <table style="width:600px"  >
+    <table style="width: 600px;"  >
       <tr>
         <td colspan="2">Stage</td>
       <tr>
-        <td>Entreprise : <?= $result-> compagny_name ?><br/> Competences : <?= $result->skills ?><br/> Note de l'entreprise : <?= $result->trust_of_pilot ?><br/> Secteur d'activite : <?= $result->sector_of_activity ?><br/> Ville : <?= $result-> Town ?> <br/> Duree du stage : <?= $result->internship_duration ?> <br/> Date de debut :<?= $result->start_date ?> <br/> Base de remuneration : <?= $result-> remuneration_basis ?> <br/> Nombre de place offertes : <?= $result-> number_of_places_offered  ?> </td>
+        <td>Entreprise : <?= $result-> company_name ?><br/> Competences : <?= $result->skills ?><br/> Note de l'entreprise : <?= $result->trust_of_pilot ?><br/> Secteur d'activite : <?= $result->sector_of_activity ?><br/> Ville : <?= $result-> Town ?> <br/> Duree du stage : <?= $result->internship_duration ?> <br/> Date de debut :<?= $result->start_date ?> <br/> Base de remuneration : <?= $result-> remuneration_basis ?> <br/> Nombre de place offertes : <?= $result-> number_of_places_offered  ?> </td>
         <td>En quoi consiste ce stage ?<br/> <?= $result-> description ?> <br/>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
           <div class="note">
