@@ -1,9 +1,9 @@
-!doctype html>
+<!doctype html>
 
 <?php
-$dsn = 'mysql:dbname=projet;host=127.0.0.1:3306';                /*Chaine de connexion avec IP et BDD */
+$dsn = 'mysql:dbname=projetweb;host=localhost';                /*Chaine de connexion avec IP et BDD */
 $username_bdd = "root";                                                 /*Nom d'utilisateur pour MySQL */
-$password_bdd = "cesi";                                               /*Mot de passe pour MySQL*/
+$password_bdd = "CESI123";                                               /*Mot de passe pour MySQL*/
 $error = false;                                                         /*Erreur de connexion à false avant connexion*/
 
 try {                                                                   /*Tente une connexion...*/
@@ -15,7 +15,7 @@ echo $error;
 }
 
 if (!$error) {
-$query = $bdd->prepare('SELECT name_offer, name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
+$query = $bdd->prepare('SELECT name_offer, company_name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
 $query->execute();
 $results = $query->fetchALL(PDO::FETCH_OBJ);
 ?>
@@ -104,7 +104,7 @@ $results = $query->fetchALL(PDO::FETCH_OBJ);
       <tr>
         <td colspan="2">Stage</td>
       <tr>
-        <td>Entreprise : <?= $result->name ?><br/> Competences : <?= $result->skills ?><br/> Note de l'entreprise : <?= $result->trust_of_pilot ?><br/> Secteur d'activite : <?= $result->sector_of_activity ?><br/> Ville : <?= $result-> Town ?> <br/> Duree du stage : <?= $result->internship_duration ?> <br/> Date de debut :<?= $result->start_date ?> <br/> Base de remuneration : <br/> Nombre de place offertes : <?= $result-> number_of_places_offered  ?></td>
+        <td>Entreprise : <?= $result->company_name ?><br/> Competences : <?= $result->skills ?><br/> Note de l'entreprise : <?= $result->trust_of_pilot ?><br/> Secteur d'activite : <?= $result->sector_of_activity ?><br/> Ville : <?= $result-> Town ?> <br/> Duree du stage : <?= $result->internship_duration ?> <br/> Date de debut :<?= $result->start_date ?> <br/> Base de remuneration : <br/> Nombre de place offertes : <?= $result-> number_of_places_offered  ?></td>
         <td>En quoi consiste ce stage ?<br/> ...<br/>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
           <div class="note">
