@@ -11,7 +11,7 @@ try {                                                                   /*Tente 
     echo $error;
 }
 if (!$error) {
-    $query = $bdd->prepare('SELECT name_offer, company_name, skills, trust_of_pilot, sector_of_activity, Town, internship_duration, start_date, remuneration_basis, number_of_places_offered, description FROM offer NATURAL JOIN location NATURAL JOIN company NATURAL JOIN evaluate;');
+    $query = $bdd->prepare('SELECT login,password FROM users;');
     $query->execute();
     $results = $query->fetchALL(PDO::FETCH_OBJ);
 }
@@ -25,7 +25,9 @@ else {
 echo $bonjours;
 ?>
 <script>
-    console.log('<?php echo $bonjours;?>');
+    <?php foreach ($results as $result){ ?>
+    console.log('<?php echo $result->login;?>');
+    <?php }    ?>
 </script>
 <html lang="en">
   <head>
