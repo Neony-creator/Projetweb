@@ -1,8 +1,7 @@
 <!doctype html>
 <?php
 require('chaineconnexion.php');
-?>
-<?php
+
 try {                                                                   /*Tente une connexion...*/
     $bdd = new PDO($dsn, $username_bdd, $password_bdd);                 /*Creation objet PDO et init de la connexion*/
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);      /*Définition de toutes erreurs en tant qu'Exception*/
